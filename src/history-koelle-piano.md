@@ -1,0 +1,44 @@
+---
+local: en_US
+type: article
+title: Biography - John Koelle Piano
+description: The History of Koelle Piano John Koelle began his piano career at an early age. John’s father was involved in guitar building and string repair. When he was just 12, John began learning the piano from a neighbor who happened to be a piano technician. After several years of both working on and playing piano, [&hellip;]
+url: /history-koelle-piano/
+---
+# Biography
+
+## The History of Koelle Piano
+
+John Koelle began his piano career at an early age. 
+John’s father was involved in guitar building and string repair. 
+When he was just 12, John began learning the piano from a neighbor who happened to be a piano technician.
+After several years of both working on and playing piano, John finished his education, apprenticed for 2 years and started his business.
+
+Koelle Piano was born in the north suburbs of Chicago and has now spanned over four decades. John’s wide-ranging clientele reads like a “Who’s Who” in America, including:
+
+- Fortune 500 CEO’s
+- Prominent musicians
+- Global hotel magnates
+- Prestigious colleges and universities
+- Famous theater and musical venues
+
+Mr. Koelle came from humble beginnings and grew his business with honesty, 
+integrity, quality and last but not least, fair pricing.
+It did not matter to John if you were a Fortune 500 CEO who wanted a premium 7’ Steinway,
+or a parent wanting to purchase their child a starter piano for that first piano lesson,
+no job or person was too big or too small.
+
+As technology evolved, so did Koelle Piano.
+For the last 15 years, Koelle has been able to expand his business well beyond the Midwest as a result of the Internet,
+national shipping discounts and other technology.
+A prospective customer can take comfort in knowing they can get the same top-notch quality from Koelle Piano,
+wherever you live in the US.
+
+In fact, Koelle Piano has also completed a number of projects for its International clients as well.
+Some of the countries include: Israel, China, Japan, England, and Russia.
+
+If you are not in the Chicago metro area but are interested in purchasing or having the highest quality 
+rebuild or refinish performed on your piano, Koelle Piano is an option for you.
+
+If you are in the Chicago metro area,
+then you probably already know Koelle Piano and the man that has guaranteed his work for over 40 years.
