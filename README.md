@@ -11,6 +11,7 @@ John Koelle Piano site
 - Robot.txt
 - Pages
     - Home
+    - NotFound/404
     - Blog
         - Purchasing a preowned grand
         - Consumers guide on how to buy a used piano
