@@ -4,32 +4,44 @@ John Koelle Piano site
 
 ## TODO
 
-- Head
-    - General Metadata
-    - Page Metadata
-- SiteMap
-- Robot.txt
-- Pages
-    - Home
-    - NotFound/404
-    - Blog
-        - Purchasing a preowned grand
-        - Consumers guide on how to buy a used piano
-    - General
-        - Biography
-        - Restoration/Process
-        - Restoration/Service
-        - Tuning And Service
-        - Testimonials
-    - Pianos for sale
-        - ~ 5 listings
-    - Contact Us
-- Header
-    - Navigation
-    - Style
-- Footer
-    - Navigation
-    - Style
+- Infrastructure
+    - Hosting
+        - dev environment
+        - production environment
+    - CI/CD
+    - Domain switch
+    - Testing
+    - Analytics
+    - SEO
+    - Accessibility
+    - Performance
+- Site
+    - Head
+        - General Metadata
+        - Page Metadata
+    - SiteMap
+    - Robot.txt
+    - Pages
+        - Home
+        - NotFound/404
+        - Blog
+            - Purchasing a preowned grand
+            - Consumers guide on how to buy a used piano
+        - General
+            - Biography
+            - Restoration/Process
+            - Restoration/Service
+            - Tuning And Service
+            - Testimonials
+        - Pianos for sale
+            - ~ 5 listings
+        - Contact Us
+    - Header
+        - Navigation
+        - Style
+    - Footer
+        - Navigation
+        - Style
 
 ## Tooling
 
