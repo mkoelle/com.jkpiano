@@ -1,34 +1,38 @@
 ---
-import { Navbar } from 'astro-bootstrap';
-import type { NavbarItemType } from 'astro-bootstrap';
-const siteTitle = 'John Koelle Piano'; // pull this in from a config file
+import { Navbar } from "astro-bootstrap";
+import type { NavbarItemType } from "astro-bootstrap";
+const siteTitle = "John Koelle Piano"; // pull this in from a config file
 const items: NavbarItemType[] = [
   // pull this in from a config file
-  { text: 'Biography', href: '/history-koelle-piano' },
+  { text: "Biography", href: "/history-koelle-piano" },
   {
-    text: 'Restoration',
+    text: "Restoration",
     subItems: [
-      { text: 'The Restoration Process', href: '/restoration-process' },
+      { text: "The Restoration Process", href: "/restoration-process" },
       { divider: true },
-      { text: 'Restoration Service', href: '/restoration-service' },
+      { text: "Restoration Service", href: "/restoration-service" },
     ],
   },
-  {text:"Tuning and service" , href:"/tuning-and-service"},
-  {text:"Pianos for sale" , href:"#"},
-  {text:"Contact Us" , href:"#"},
-  {text:"Blog" , href:"#"},
-  {text:"Testimonials" , href:"/testimonials"},
+  { text: "Tuning and service", href: "/tuning-and-service" },
+  { text: "Pianos for sale", href: "#" },
+  { text: "Contact Us", href: "#" },
+  { text: "Blog", href: "#" },
+  { text: "Testimonials", href: "/testimonials" },
 ];
-import { Image } from 'astro:assets';
-import logo from "../../images/Logo.png"
-const id = 'topNavBar';
+import { Image } from "astro:assets";
+import logo from "../../images/Logo.png";
+import Styles from "./styles.module.scss";
+const id = "topNavBar";
 ---
-<Navbar class="navbar-expand-lg bg-primary" data-bs-theme="dark">
-    <div class="container-xxl bd-gutter flex-wrap flex-lg-nowrap">
-      <a class="navbar-brand" href="/"> <Image src={logo} class="logo" alt="logo" /></a>
-      <Navbar.Toggler controls={id} />
-      <Navbar.Collapse {id}>
-        <Navbar.Items {items} class="me-auto mb-2 mb-lg-0" />
-      </Navbar.Collapse>
-    </div>
+
+<Navbar class=`navbar-expand-lg ${Styles.header_area}` data-bs-theme="dark">
+  <div class=`container-xxl bd-gutter flex-wrap flex-lg-nowrap`>
+    <a class="navbar-brand" href="/">
+      <Image src={logo} class="logo" alt="logo" /></a
+    >
+    <Navbar.Toggler controls={id} />
+    <Navbar.Collapse {id}>
+      <Navbar.Items {items} class="me-auto mb-2 mb-lg-0" />
+    </Navbar.Collapse>
+  </div>
 </Navbar>
