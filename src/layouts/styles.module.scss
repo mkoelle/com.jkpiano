@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'ACaslon';
+  src: url('/fonts/ACaslon.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+body {
+  color: #000;
+  font-size: 18px;
+  word-wrap: break-word;
+  font-family: 'ACaslon';
+  background-color: #fff;
+}
