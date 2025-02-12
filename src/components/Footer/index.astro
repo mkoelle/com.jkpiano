@@ -1,10 +1,66 @@
 ---
-import Styles from './styles.module.scss'
+import Styles from "./styles.module.scss";
 import bootstrap from "bootstrap/dist/js/bootstrap.bundle.min.js?url";
 ---
 
-<footer class={Styles.footer}>
-    &copy; {new Date().getFullYear()} John Koelle Piano
-    <small class={Styles.byline}>🚀 Built by mkoelle</small>
-</footer>
+<div class="footer_area mt-5">
+    <div class="container col-sm-7">
+        <div class="footer">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class={Styles.footer_widget}>
+                        <h3>Contact</h3>
+                        <p>©John Koelle Pianos</p>
+                        <p>
+                            <i class="fa fa-phone"></i><a
+                                href="tel:+18473365919">+1 (847) 336-5919</a
+                            >
+                        </p>
+                        <p>
+                            <i class="fa fa-envelope"></i><a
+                                href="mailto:JKoelle@aol.com">JKoelle@aol.com</a
+                            >
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class={Styles.footer_widget}>
+                        <h3>Menu</h3>
+                        <ul id="menu-footer-menu" class="">
+                            <li
+                                id="menu-item-1017"
+                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-1017"
+                            >
+                                <a href="/">Home</a>
+                            </li>
+                            <li
+                                id="menu-item-1018"
+                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1018"
+                            >
+                                <a href="/history-koelle-piano/">Biography</a>
+                            </li>
+                            <li
+                                id="menu-item-1019"
+                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1019"
+                            >
+                                <a href="/pianos-for-sale/">Pianos for Sale</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class={Styles.footer_widget}>
+                        <h3>Contact</h3>
+                        <p>
+                            Our restorations are a combination of master
+                            woodworking skills, along with artful craftsmanship
+                            and precision accuracy.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script src={bootstrap}></script>
