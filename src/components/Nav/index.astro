@@ -19,12 +19,13 @@ const items: NavbarItemType[] = [
   {text:"Blog" , href:"#"},
   {text:"Testimonials" , href:"/testimonials"},
 ];
-
+import { Image } from 'astro:assets';
+import logo from "../../images/Logo.png"
 const id = 'topNavBar';
 ---
 <Navbar class="navbar-expand-lg bg-primary" data-bs-theme="dark">
     <div class="container-xxl bd-gutter flex-wrap flex-lg-nowrap">
-      <a class="navbar-brand" href="/"> <img src="https://jkpiano.com/wp-content/uploads/2017/12/Screenshot-2017-11-30-20.56.49.png"   class="logo" alt="logo"></a>
+      <a class="navbar-brand" href="/"> <Image src={logo} class="logo" alt="logo" /></a>
       <Navbar.Toggler controls={id} />
       <Navbar.Collapse {id}>
         <Navbar.Items {items} class="me-auto mb-2 mb-lg-0" />
