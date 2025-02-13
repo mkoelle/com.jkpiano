@@ -6,7 +6,6 @@
   font-display: swap;
 }
 
-
 body {
   color: #000;
   font-size: 18px;
@@ -14,3 +13,11 @@ body {
   font-family: 'ACaslon';
   background-color: #fff;
 }
+
+$primary: #007bff;
+
+.alpha {
+  color: darksalmon;
+}
+
+@import 'bootstrap/scss/bootstrap';
