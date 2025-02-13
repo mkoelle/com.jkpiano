@@ -12,11 +12,9 @@ import "../styles/global.scss";
 	</head>
 	<body>
 		<Nav />
-		<div class="container-fluid d-flex justify-content-center">
-			<div class="col-sm-7 mt-4 text-lef">
-				<slot />
-			</div>
-		</div>
+		<main class="container-fluid col-sm-8 mt-4 text-lef">
+			<slot />
+		</main>
 		<Footer />
 	</body>
 </html>

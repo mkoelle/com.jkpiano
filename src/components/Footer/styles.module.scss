@@ -1,23 +1,27 @@
-.footer {
-	text-align: center;
-	padding-top: 8rem;
-	padding-right: 2rem;
-	padding-bottom: 4rem;
-	padding-left: 2rem;
-}
-
-.byline {
-	display: block;
-	margin-top: 1rem;
-	color: var(--t-subdue);
-	font-size: var(--f-d2);
-	text-transform: uppercase;
-}
-
-.footer_widget h3 {
+.footer h3 {
 	color: #9F1F1B;
 	font-family: 'ACaslonBold';
 	font-size: 20px;
 	padding-bottom: 5px;
 	border-bottom: 2px solid #9F1F1B;
+}
+.footer ul {
+    margin: 0;
+    padding: 0;
+}
+.footer ul li {
+    list-style: none;
+}
+.footer ul li a {
+    color: #000;
+    transition: all .3sease;
+	text-decoration: none;
+}
+.footer p {
+	margin-bottom: .3rem;
+ 
+}
+.footer p a {
+	color: #9F1F1B;
+	text-decoration: none;
 }
