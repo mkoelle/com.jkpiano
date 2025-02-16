@@ -1,0 +1,39 @@
+---
+const {name , imagePath } = Astro.props.frontmatter;
+import type { ImageMetadata } from 'astro';
+import type { CarouselSlideType } from 'astro-bootstrap';
+import { Carousel } from 'astro-bootstrap';
+import Layout from "@layouts/Layout.astro";
+const allImages = await import.meta.glob<{ default: ImageMetadata }>(
+  "@images/**/*.{jpeg,jpg,png,gif}",
+);
+const images = Object.keys( allImages).filter((x: string) => x.search(imagePath) !== -1 )
+const slides: CarouselSlideType[] = images.map<CarouselSlideType>(image => ({
+	img: image, alt: `image of ${name}`
+}))
+slides[0].active=true
+const id = 'carouselExampleBasic';
+---
+
+<Layout>
+	<slot />
+	
+	<Carousel {id} fade>
+		<Carousel.Indicators {id} {slides} />
+		<Carousel.Inner>
+		  {
+			slides.map((slide) => (
+			  <Carousel.Item active={slide.active}>
+				<img
+				  src={slide.img}
+				  class="d-block w-100 img-fluid"
+				  alt={slide.alt}
+				/>
+			  </Carousel.Item>
+			))
+		  }
+		</Carousel.Inner>
+		<Carousel.Controls id={id} />
+	  </Carousel>
+	  
+</Layout>
