@@ -9,7 +9,7 @@ const allImages = await import.meta.glob<{ default: ImageMetadata }>(
 );
 const images = Object.keys( allImages).filter((x: string) => x.search(imagePath) !== -1 )
 const slides: CarouselSlideType[] = images.map<CarouselSlideType>(image => ({
-	img: image, alt: `image of ${name}`
+	img: image, alt: `${name}`
 }))
 slides[0].active=true
 const id = 'carouselExampleBasic';
