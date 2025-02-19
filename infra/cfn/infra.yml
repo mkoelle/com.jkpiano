@@ -30,80 +30,80 @@ Resources:
             Resource: !Sub "arn:aws:s3:::${Content}/*"
             Principal:
               CanonicalUser: !GetAtt CloudFrontOriginAccessIdentity.S3CanonicalUserId
-  CDN:
-    Type: AWS::CloudFront::Distribution
-    Properties:
-      DistributionConfig:
-        Comment: !Sub "CDN for ${GivenDomain}"
-        Aliases:
-          - !Sub "${GivenDomain}"
-          - !Sub "www.${GivenDomain}"
-        # ViewerCertificate:
-        #   AcmCertificateArn: !Ref Certificate
-        #   MinimumProtocolVersion: "TLSv1.2_2018"
-        #   SslSupportMethod: "sni-only"
-        DefaultCacheBehavior:
-          ForwardedValues:
-            QueryString: true
-          TargetOriginId: s3origin
-          ViewerProtocolPolicy: "redirect-to-https"
-          # FunctionAssociations:
-          #   - EventType: viewer-request
-          #     FunctionARN: !GetAtt CDNRequestHandler.FunctionMetadata.FunctionARN
-        # DefaultRootObject: index.html
-        CustomErrorResponses:
-        - ErrorCode: 404
-          ResponsePagePath: "/index.html"
-          ResponseCode: 200
-        - ErrorCode: 403
-          ResponsePagePath: "/index.html"
-          ResponseCode: 200
-        PriceClass: "PriceClass_100"
-        Enabled: true
-        HttpVersion: http2
-        Origins:
-          - Id: s3origin
-            DomainName: !GetAtt "Content.DomainName"
-            S3OriginConfig:
-              OriginAccessIdentity: !Sub "origin-access-identity/cloudfront/${CloudFrontOriginAccessIdentity}"
-  # CDNRequestHandler:
-  #   Type: AWS::CloudFront::Function
-  #   Properties: 
-  #     AutoPublish: True
-  #     FunctionCode: function handler(e){var i=e.request,n=i.uri;return n.endsWith("/")?i.uri+="index.html":n.includes(".")||(i.uri+="/index.html"),i}
-  #     FunctionConfig: 
-  #       Comment: redirects folder requests for clean urls
-  #       Runtime: cloudfront-js-2.0
-  #     Name: Index-Server
-  # Certificate:
-  #   Type: AWS::CertificateManager::Certificate
-  #   Properties: 
-  #     DomainName: !Sub "${GivenDomain}"
-  #     DomainValidationOptions:
-  #       - DomainName: !Sub "${GivenDomain}"
-  #         HostedZoneId: !Sub "${HostedZoneId}"
-  #       - DomainName: !Sub "www.${GivenDomain}"
-  #         HostedZoneId: !Sub "${HostedZoneId}"
-  #     SubjectAlternativeNames: 
-  #       - !Sub "${GivenDomain}"
-  #       - !Sub "www.${GivenDomain}"
-  #     ValidationMethod: DNS
-  HostedZoneRecordSet:
-    Type: AWS::Route53::RecordSetGroup
-    Properties:
-      HostedZoneId:
-        Ref: HostedZoneId
-      RecordSets:
-        - Name: !Sub "${GivenDomain}"
-          Type: A
-          AliasTarget:
-            HostedZoneId: Z2FDTNDATAQYW2 # This is ALWAYS the cloudfront hosted zone ID
-            DNSName: !GetAtt CDN.DomainName
-        - Name: !Sub "www.${GivenDomain}"
-          Type: A
-          AliasTarget:
-            HostedZoneId: Z2FDTNDATAQYW2 # This is ALWAYS the cloudfront hosted zone ID
-            DNSName: !GetAtt CDN.DomainName
+  # CDN:
+  #   Type: AWS::CloudFront::Distribution
+  #   Properties:
+  #     DistributionConfig:
+  #       Comment: !Sub "CDN for ${GivenDomain}"
+  #       Aliases:
+  #         - !Sub "${GivenDomain}"
+  #         - !Sub "www.${GivenDomain}"
+  #       # ViewerCertificate:
+  #       #   AcmCertificateArn: !Ref Certificate
+  #       #   MinimumProtocolVersion: "TLSv1.2_2018"
+  #       #   SslSupportMethod: "sni-only"
+  #       DefaultCacheBehavior:
+  #         ForwardedValues:
+  #           QueryString: true
+  #         TargetOriginId: s3origin
+  #         ViewerProtocolPolicy: "redirect-to-https"
+  #         # FunctionAssociations:
+  #         #   - EventType: viewer-request
+  #         #     FunctionARN: !GetAtt CDNRequestHandler.FunctionMetadata.FunctionARN
+  #       # DefaultRootObject: index.html
+  #       CustomErrorResponses:
+  #       - ErrorCode: 404
+  #         ResponsePagePath: "/index.html"
+  #         ResponseCode: 200
+  #       - ErrorCode: 403
+  #         ResponsePagePath: "/index.html"
+  #         ResponseCode: 200
+  #       PriceClass: "PriceClass_100"
+  #       Enabled: true
+  #       HttpVersion: http2
+  #       Origins:
+  #         - Id: s3origin
+  #           DomainName: !GetAtt "Content.DomainName"
+  #           S3OriginConfig:
+  #             OriginAccessIdentity: !Sub "origin-access-identity/cloudfront/${CloudFrontOriginAccessIdentity}"
+  # # CDNRequestHandler:
+  # #   Type: AWS::CloudFront::Function
+  # #   Properties: 
+  # #     AutoPublish: True
+  # #     FunctionCode: function handler(e){var i=e.request,n=i.uri;return n.endsWith("/")?i.uri+="index.html":n.includes(".")||(i.uri+="/index.html"),i}
+  # #     FunctionConfig: 
+  # #       Comment: redirects folder requests for clean urls
+  # #       Runtime: cloudfront-js-2.0
+  # #     Name: Index-Server
+  # # Certificate:
+  # #   Type: AWS::CertificateManager::Certificate
+  # #   Properties: 
+  # #     DomainName: !Sub "${GivenDomain}"
+  # #     DomainValidationOptions:
+  # #       - DomainName: !Sub "${GivenDomain}"
+  # #         HostedZoneId: !Sub "${HostedZoneId}"
+  # #       - DomainName: !Sub "www.${GivenDomain}"
+  # #         HostedZoneId: !Sub "${HostedZoneId}"
+  # #     SubjectAlternativeNames: 
+  # #       - !Sub "${GivenDomain}"
+  # #       - !Sub "www.${GivenDomain}"
+  # #     ValidationMethod: DNS
+  # HostedZoneRecordSet:
+  #   Type: AWS::Route53::RecordSetGroup
+  #   Properties:
+  #     HostedZoneId:
+  #       Ref: HostedZoneId
+  #     RecordSets:
+  #       - Name: !Sub "${GivenDomain}"
+  #         Type: A
+  #         AliasTarget:
+  #           HostedZoneId: Z2FDTNDATAQYW2 # This is ALWAYS the cloudfront hosted zone ID
+  #           DNSName: !GetAtt CDN.DomainName
+  #       - Name: !Sub "www.${GivenDomain}"
+  #         Type: A
+  #         AliasTarget:
+  #           HostedZoneId: Z2FDTNDATAQYW2 # This is ALWAYS the cloudfront hosted zone ID
+  #           DNSName: !GetAtt CDN.DomainName
 Outputs:
   BucketName:
     Description: "S3 Bucket Name"
@@ -111,12 +111,12 @@ Outputs:
     Export:
       Name:
         Fn::Sub: ${AWS::StackName}-content-bucket
-  DistributionId:
-    Description: "CloudFront Distribution ID"
-    Value: !Ref CDN
-  Domain:
-    Description: "Cloudfront Domain"
-    Value: !GetAtt CDN.DomainName
-    Export:
-      Name:
-        Fn::Sub: ${AWS::StackName}-cdn
+  # DistributionId:
+  #   Description: "CloudFront Distribution ID"
+  #   Value: !Ref CDN
+  # Domain:
+  #   Description: "Cloudfront Domain"
+  #   Value: !GetAtt CDN.DomainName
+  #   Export:
+  #     Name:
+  #       Fn::Sub: ${AWS::StackName}-cdn
