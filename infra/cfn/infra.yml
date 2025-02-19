@@ -73,7 +73,7 @@ Resources:
       FunctionCode: function handler(e){var i=e.request,n=i.uri;return n.endsWith("/")?i.uri+="index.html":n.includes(".")||(i.uri+="/index.html"),i}
       FunctionConfig: 
         Comment: redirects folder requests for clean urls
-        Runtime: cloudfront-js-1.0
+        Runtime: cloudfront-js-2.0
       Name: Index-Server
   # Certificate:
   #   Type: AWS::CertificateManager::Certificate
