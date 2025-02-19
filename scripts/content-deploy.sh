@@ -19,7 +19,7 @@ set -x
 npm i
 npm run build
 
-ls build
+ls dist
 
 # aws s3 sync _site "s3://${BUCKET}" \
 #   --exclude '**/index.html' \

@@ -14,7 +14,7 @@ export DOMAIN=jkpiano
 
 set -x
 
-aws ls s3
+aws s3 ls
 
 # HOSTEDZONE_ID=$(aws ssm get-parameter --name com-${DOMAIN}-domains-hosted-zone-id --query "Parameter.Value" --output text)
 # GIVEN_DOMAIN=$(aws ssm get-parameter --name com-${DOMAIN}-domains-hosted-zone-name --query "Parameter.Value" --output text)
