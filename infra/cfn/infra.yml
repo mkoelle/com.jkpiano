@@ -74,7 +74,7 @@ Resources:
       FunctionConfig: 
         Comment: redirects folder requests for clean urls
         Runtime: cloudfront-js-2.0
-      Name: Index-Server
+      Name: Index-Server2
   # # Certificate:
   # #   Type: AWS::CertificateManager::Certificate
   # #   Properties: 
