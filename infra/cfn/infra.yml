@@ -66,15 +66,15 @@ Resources:
             DomainName: !GetAtt "Content.DomainName"
             S3OriginConfig:
               OriginAccessIdentity: !Sub "origin-access-identity/cloudfront/${CloudFrontOriginAccessIdentity}"
-  CDNRequestHandler:
-    Type: AWS::CloudFront::Function
-    Properties: 
-      AutoPublish: True
-      FunctionCode: function handler(e){var i=e.request,n=i.uri;return n.endsWith("/")?i.uri+="index.html":n.includes(".")||(i.uri+="/index.html"),i}
-      FunctionConfig: 
-        Comment: redirects folder requests for clean urls
-        Runtime: cloudfront-js-2.0
-      Name: Index-Server2
+  # CDNRequestHandler:
+  #   Type: AWS::CloudFront::Function
+  #   Properties: 
+  #     AutoPublish: True
+  #     FunctionCode: function handler(e){var i=e.request,n=i.uri;return n.endsWith("/")?i.uri+="index.html":n.includes(".")||(i.uri+="/index.html"),i}
+  #     FunctionConfig: 
+  #       Comment: redirects folder requests for clean urls
+  #       Runtime: cloudfront-js-2.0
+  #     Name: Index-Server2
   # # Certificate:
   # #   Type: AWS::CertificateManager::Certificate
   # #   Properties: 
@@ -88,22 +88,22 @@ Resources:
   # #       - !Sub "${GivenDomain}"
   # #       - !Sub "www.${GivenDomain}"
   # #     ValidationMethod: DNS
-  # HostedZoneRecordSet:
-  #   Type: AWS::Route53::RecordSetGroup
-  #   Properties:
-  #     HostedZoneId:
-  #       Ref: HostedZoneId
-  #     RecordSets:
-  #       - Name: !Sub "${GivenDomain}"
-  #         Type: A
-  #         AliasTarget:
-  #           HostedZoneId: Z2FDTNDATAQYW2 # This is ALWAYS the cloudfront hosted zone ID
-  #           DNSName: !GetAtt CDN.DomainName
-  #       - Name: !Sub "www.${GivenDomain}"
-  #         Type: A
-  #         AliasTarget:
-  #           HostedZoneId: Z2FDTNDATAQYW2 # This is ALWAYS the cloudfront hosted zone ID
-  #           DNSName: !GetAtt CDN.DomainName
+  HostedZoneRecordSet:
+    Type: AWS::Route53::RecordSetGroup
+    Properties:
+      HostedZoneId:
+        Ref: HostedZoneId
+      RecordSets:
+        - Name: !Sub "${GivenDomain}"
+          Type: A
+          AliasTarget:
+            HostedZoneId: Z2FDTNDATAQYW2 # This is ALWAYS the cloudfront hosted zone ID
+            DNSName: !GetAtt CDN.DomainName
+        - Name: !Sub "www.${GivenDomain}"
+          Type: A
+          AliasTarget:
+            HostedZoneId: Z2FDTNDATAQYW2 # This is ALWAYS the cloudfront hosted zone ID
+            DNSName: !GetAtt CDN.DomainName
 Outputs:
   BucketName:
     Description: "S3 Bucket Name"
