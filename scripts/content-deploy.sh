@@ -19,16 +19,14 @@ set -x
 npm i
 npm run build
 
-ls dist
+aws s3 sync _site "s3://${BUCKET}" \
+  --exclude '**/index.html' \
+  --exclude 'index.html' \
+  --delete
 
-# aws s3 sync _site "s3://${BUCKET}" \
-#   --exclude '**/index.html' \
-#   --exclude 'index.html' \
-#   --delete
-
-# aws s3 cp _site "s3://${BUCKET}" \
-#   --recursive \
-#   --exclude "*" \
-#   --include "**/index.html" \
-#   --include "index.html" \
-#   --cache-control 'max-age=0'
+aws s3 cp _site "s3://${BUCKET}" \
+  --recursive \
+  --exclude "*" \
+  --include "**/index.html" \
+  --include "index.html" \
+  --cache-control 'max-age=0'
