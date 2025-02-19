@@ -38,10 +38,10 @@ Resources:
         Aliases:
           - !Sub "${GivenDomain}"
           - !Sub "www.${GivenDomain}"
-        ViewerCertificate:
-          AcmCertificateArn: !Ref Certificate
-          MinimumProtocolVersion: "TLSv1.2_2018"
-          SslSupportMethod: "sni-only"
+        # ViewerCertificate:
+        #   AcmCertificateArn: !Ref Certificate
+        #   MinimumProtocolVersion: "TLSv1.2_2018"
+        #   SslSupportMethod: "sni-only"
         DefaultCacheBehavior:
           ForwardedValues:
             QueryString: true
@@ -75,19 +75,19 @@ Resources:
         Comment: redirects folder requests for clean urls
         Runtime: cloudfront-js-1.0
       Name: Index-Server
-  Certificate:
-    Type: AWS::CertificateManager::Certificate
-    Properties: 
-      DomainName: !Sub "${GivenDomain}"
-      DomainValidationOptions:
-        - DomainName: !Sub "${GivenDomain}"
-          HostedZoneId: !Sub "${HostedZoneId}"
-        - DomainName: !Sub "www.${GivenDomain}"
-          HostedZoneId: !Sub "${HostedZoneId}"
-      SubjectAlternativeNames: 
-        - !Sub "${GivenDomain}"
-        - !Sub "www.${GivenDomain}"
-      ValidationMethod: DNS
+  # Certificate:
+  #   Type: AWS::CertificateManager::Certificate
+  #   Properties: 
+  #     DomainName: !Sub "${GivenDomain}"
+  #     DomainValidationOptions:
+  #       - DomainName: !Sub "${GivenDomain}"
+  #         HostedZoneId: !Sub "${HostedZoneId}"
+  #       - DomainName: !Sub "www.${GivenDomain}"
+  #         HostedZoneId: !Sub "${HostedZoneId}"
+  #     SubjectAlternativeNames: 
+  #       - !Sub "${GivenDomain}"
+  #       - !Sub "www.${GivenDomain}"
+  #     ValidationMethod: DNS
   HostedZoneRecordSet:
     Type: AWS::Route53::RecordSetGroup
     Properties:
