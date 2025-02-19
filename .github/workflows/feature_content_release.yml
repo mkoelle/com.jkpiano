@@ -5,10 +5,10 @@ on:
       - main
 jobs:
   dev:
-    name: deploy
+    name: deploy-dev
     runs-on: ubuntu-latest
     environment:
-      name: ${{ inputs.environment }}
+      name: dev
     steps:
       - name: Checkout
         uses: actions/checkout@v4
