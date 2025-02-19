@@ -35,7 +35,7 @@ Resources:
     Properties:
       DistributionConfig:
         Comment: !Sub "CDN for ${GivenDomain}"
-        Aliases:
+        # Aliases:
           # - !Sub "${GivenDomain}"
           # - !Sub "www.${GivenDomain}"
         # ViewerCertificate:
