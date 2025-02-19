@@ -14,17 +14,19 @@ export DOMAIN=jkpiano
 
 set -x
 
-# BUCKET=$(aws cloudformation list-exports --query "Exports[?Name == 'com-${DOMAIN}-content-bucket'].Value" --output text)
+BUCKET=$(aws cloudformation list-exports --query "Exports[?Name == 'com-${DOMAIN}-content-bucket'].Value" --output text)
 
 npm i
 npm run build
 
-aws s3 sync _site "s3://${BUCKET}" \
+ls dist
+
+aws s3 sync dist "s3://${BUCKET}" \
   --exclude '**/index.html' \
   --exclude 'index.html' \
   --delete
 
-aws s3 cp _site "s3://${BUCKET}" \
+aws s3 cp dist "s3://${BUCKET}" \
   --recursive \
   --exclude "*" \
   --include "**/index.html" \
