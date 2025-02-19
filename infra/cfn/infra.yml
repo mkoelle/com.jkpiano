@@ -66,15 +66,15 @@ Resources:
             DomainName: !GetAtt "Content.DomainName"
             S3OriginConfig:
               OriginAccessIdentity: !Sub "origin-access-identity/cloudfront/${CloudFrontOriginAccessIdentity}"
-  # CDNRequestHandler:
-  #   Type: AWS::CloudFront::Function
-  #   Properties: 
-  #     AutoPublish: True
-  #     FunctionCode: function handler(e){var i=e.request,n=i.uri;return n.endsWith("/")?i.uri+="index.html":n.includes(".")||(i.uri+="/index.html"),i}
-  #     FunctionConfig: 
-  #       Comment: redirects folder requests for clean urls
-  #       Runtime: cloudfront-js-2.0
-  #     Name: Index-Server2
+  CDNRequestHandler:
+    Type: AWS::CloudFront::Function
+    Properties: 
+      AutoPublish: True
+      FunctionCode: function handler(e){var i=e.request,n=i.uri;return n.endsWith("/")?i.uri+="index.html":n.includes(".")||(i.uri+="/index.html"),i}
+      FunctionConfig: 
+        Comment: redirects folder requests for clean urls
+        Runtime: cloudfront-js-2.0
+      Name: Index-Server2
   # # Certificate:
   # #   Type: AWS::CertificateManager::Certificate
   # #   Properties: 
