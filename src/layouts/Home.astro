@@ -1,0 +1,44 @@
+---
+import Nav from "@components/Nav/index.astro";
+import Footer from "@components/Footer/index.astro";
+import MainHead from "@components/MainHead.astro";
+import "../styles/global.scss";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<MainHead />
+	</head>
+	<body>
+		<Nav>
+			<div class="container pb-lg-2 pb-sm-1">
+				<div class="bor  text-bg-dark bg-opacity-50">
+					<div class="der">
+						<div class="col-sm-12 text-light" >
+							<h3>Purchase. Restoration. Service.</h3>
+							<p>
+								At John Koelle Piano we specialize in the custom
+								restoration of Steinways and other fine pianos.
+								We offer the Highest Quality Craftsmanship at
+								honest prices. We rebuild for many institutions
+								and professionals as well as a large private
+								clientele. We also offer in-home service
+								including tuning and repair.
+							</p>
+							<p>
+								<a class="button" href="/restoration-service/">
+									See Restoration Services
+								</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</Nav>
+		<main class="container-fluid col-sm-8 mt-4 text-lef">
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>

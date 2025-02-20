@@ -24,15 +24,17 @@ import logo from "@images/Logo.png";
 import Styles from "./styles.module.scss";
 const id = "topNavBar";
 ---
-
-<Navbar class=`navbar navbar-expand ${Styles.navbar_head}` data-bs-theme="dark">
-  <div class=`container col-sm-8 my-2 flex-wrap`>
-    <a class="navbar-brand" href="/">
-      <Image src={logo} class="logo" alt="logo" />
-    </a>
-    <Navbar.Toggler controls={id} />
-    <Navbar.Collapse {id}>
-      <Navbar.Items {items} class="me-auto mb-2 mb-lg-0" />
-    </Navbar.Collapse>
-  </div>
-</Navbar>
+<div class=`${Styles.navbar_head}`>
+  <Navbar class=`navbar navbar-expand ` data-bs-theme="dark">
+    <div class=`container col-sm-8 my-2 flex-wrap`>
+      <a class="navbar-brand" href="/">
+        <Image src={logo} class="logo" alt="logo" />
+      </a>
+      <Navbar.Toggler controls={id} />
+      <Navbar.Collapse {id}>
+        <Navbar.Items {items} class="me-auto mb-2 mb-lg-0" />
+      </Navbar.Collapse>
+    </div>
+  </Navbar>
+  <slot />
+</div>
