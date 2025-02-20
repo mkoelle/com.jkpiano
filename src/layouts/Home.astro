@@ -3,6 +3,10 @@ import Nav from "@components/Nav/index.astro";
 import Footer from "@components/Footer/index.astro";
 import MainHead from "@components/MainHead.astro";
 import "../styles/global.scss";
+import { Image } from "astro:assets";
+import piano6 from "@images/pianos/2015/04/006-1.jpg";
+import steinway_B from "@images/pianos/2015/04/Steinway_B_277657_20.jpg";
+import layer221 from "@images/pianos//2017/10/Layer-221.png";
 ---
 
 <!doctype html>
@@ -13,9 +17,9 @@ import "../styles/global.scss";
 	<body>
 		<Nav>
 			<div class="container pb-lg-2 pb-sm-1">
-				<div class="bor  text-bg-dark bg-opacity-50">
+				<div class="bor text-bg-dark bg-opacity-50">
 					<div class="der">
-						<div class="col-sm-12 text-light" >
+						<div class="col-sm-12 text-light">
 							<h3>Purchase. Restoration. Service.</h3>
 							<p>
 								At John Koelle Piano we specialize in the custom
@@ -36,6 +40,63 @@ import "../styles/global.scss";
 				</div>
 			</div>
 		</Nav>
+
+		<div class="container">
+			<div class="bor">
+				<div class="der">
+					<div class="row">
+						<div class="col-sm-6">
+							<Image
+								src={piano6}
+								class="alignleft"
+								alt="logo"
+								width="470"
+								height="352"
+							/>
+						</div>
+						<div class="col-sm-6" style="margin-top: 8%;">
+							<h3>Purchase&#8230;</h3>
+							<p>
+								Browse our available pianos for sale. We
+								specialize in restoring Steinway grand pianos.
+							</p>
+							<p>
+								<a href="/pianos-for-sale/">Pianos for Sale</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="full_img">
+			<Image src={steinway_B} alt="logo" width="477" height="318" />
+		</div>
+
+		<div class="container">
+			<div class="bor">
+				<div class="der">
+					<div class="row">
+						<div class="col-sm-12">
+							<h2>What We Offer</h2>
+						</div>
+					</div>
+					<div class="row"></div>
+					<div class="row">
+						<div class="col-sm-12">
+							<a href="/tuning-and-service/" class="button">
+								See All Services
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="full_img">
+			<Image src={layer221} alt="logo" width="1680" height="822" />
+		</div>
+
 		<main class="container-fluid col-sm-8 mt-4 text-lef">
 			<slot />
 		</main>
