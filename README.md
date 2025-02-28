@@ -31,9 +31,7 @@ John Koelle Piano site
             - :white_square_button: Style
                 - Hero should reduce padding/margin on mobile view
                 - Purchase Section should fix overlap on mobile view
-        - :white_square_button: NotFound/404
-            - Style - TBD
-            - Should provide options for navigating to more interesting pages
+        - :heavy_check_mark: NotFound/404
         - :white_square_button: Blog
             - :white_square_button: Summary page
                 - blog listings should have title headers
@@ -60,7 +58,7 @@ John Koelle Piano site
     - :white_square_button: Header
         - :heavy_check_mark: Navigation
         - :white_square_button: Style
-            - Links should default to white / gold?, does not stand out enough
+            - :heavy_check_mark: Links should default to white / gold?, does not stand out enough
             - Phone number should be in upper right
             - Nav should collapse in mobile view (hamburger menu)
             - phone number should be sticky in mobile view

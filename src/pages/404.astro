@@ -1,10 +1,30 @@
 ---
-import Layout from '@layouts/Layout.astro'
-const pageTitle= "Page not found"
+import Layout from "@layouts/Layout.astro";
+const pageTitle = "Page not found";
 ---
+
 <Layout pageTitle={pageTitle}>
 	<div class="wrapper mt4 mb4">
-		<h1>Page Not Found</h1>
-		<p>Not found!</p>
+		<h1>We're Sorry, but we can't find that page</h1>
+
+		<div class="bor">
+			<div class="der">
+				<h2>
+					Would you be interested in some of the pianos we have for
+					sale?
+				</h2>
+				<p>
+					<a href="/pianos-for-sale/" class=`button`>Pianos for Sale</a>
+				</p>
+			</div>
+		</div>
+		<div class="bor">
+			<div class="der">
+				<h2>Or are you looking for help in servicing a piano?</h2>
+				<a href="/tuning-and-service/" class=`button`>
+					See All Services
+				</a>
+			</div>
+		</div>
 	</div>
 </Layout>
