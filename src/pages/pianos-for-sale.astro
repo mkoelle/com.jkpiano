@@ -1,11 +1,72 @@
 ---
-import Layout from '@layouts/Layout.astro'
-const allPosts = Object.values(import.meta.glob('./purchase/*.mdx', { eager: true }));
+import Layout from "@layouts/Layout.astro";
+import Styles from "./pianos-for-sale.module.scss";
+const allPosts = Object.values(
+  import.meta.glob("./purchase/*.mdx", { eager: true }),
+);
 const pageTitle = "Pianos for sale";
 ---
+
 <Layout pageTitle={pageTitle}>
-  <h1>Pianos for sale</h1>
-  <ul>
-    {allPosts.map((post: any) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
-  </ul>
+  <h2>Pianos for Sale</h2>
+  <h1>Buying a Piano</h1>
+  <p>
+    We have a full selection of Steinways and other fine grands to choose from.
+    Usually there are several on the shop floor ready to play as well as a large
+    inventory of pianos ready for restoration. See our current inventory as well
+    as phone us as there are always new pianos coming in.
+  </p>
+  <p>
+    We also offer console and grand pianos which are quality entry level
+    instruments. You may always use these to trade up to an heirloom quality
+    piano when you are ready.
+  </p>
+  <div class=`${Styles.forSale}`>
+    <h2>Restored and Currently Available</h2>
+    <ul>
+      {
+        allPosts.map((post: any) => (
+          <li>
+            <a href={post.url}>{post.frontmatter.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+  <div class=`${Styles.restoration}`>
+    <h3>Inventory of pianos ready for complete restoration</h3>
+    <ul>
+      <li>
+        Mason Hamlin "BB" 7' mahogany with ivories. The BB has always been known
+        and sought after by pianists "in the know". This piano was purchased
+        from an estate in Lake Forest and is all original serial #42613
+        indicates 1935 vintage
+      </li>
+      <li>
+        Steinway "L" 5'10 "in cherry. This piano has beautiful Cherrywood and
+        the classic Steinway style #334288 built in 1951
+      </li>
+      <li>
+        Steinway "L" 5'10 "ebony with clean piano classic lines. #224181 was
+        built in 1923 and needs a new soundboard
+      </li>
+      <li>
+        Steinway model "O" 5'10 "mahogany all original w/ ivories. This piano is
+        all original with old growth African mahogany serial # 176420 year built
+        1916
+      </li>
+      <li>
+        Steinway "M" 5'7" ebony. This is a very strong piano. Serial #208795
+        built in 1921
+      </li>
+      <li>
+        Steinway "O" 5'10 "mahogany. Nice clean piano for restoration serial
+        196603 built in 1919
+      </li>
+      <li>
+        Steinway "O" 5'10 "ebony. 3rd generation family piano all original and
+        needs restoration. Serial 189362 built in 1917
+      </li>
+    </ul>
+  </div>
 </Layout>
