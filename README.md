@@ -7,20 +7,25 @@ John Koelle Piano site
 - :white_square_button: Infrastructure
     - :white_square_button: Hosting
         - ✔️ dev environment
-        - :white_square_button: production environment
+        - ✔️ production environment
+        - :white_square_button: Domain switch
+            - Cut domain name servers over from third party to AWS hosted zone
+            - Create certificates for https
+            - Associate cloudfront with certs and domains
     - ✔️ CI/CD
-    - :white_square_button: Domain switch
-    - :white_square_button: Analytics
-    - :white_square_button: SEO
-    - :white_square_button: Testing
-    - :white_square_button: Accessibility
-    - :white_square_button: Performance
+    - :white_square_button: Analytics - TBD
+    - :white_square_button: SEO - TBD
+    - :white_square_button: Testing - TBD
+    - :white_square_button: Accessibility - TBD
+    - :white_square_button: Performance - TBD
 - :white_square_button: Site
     - 🔳 Head
         - 🔳 General Metadata
         - 🔳 Page Metadata
     - 🔳 SiteMap
     - :white_square_button: Robot.txt
+        - ensure all crawlers are blocked for dev deployment
+        - create default robot.txt with links to sitemap
     - :white_square_button: Pages
         - 🔳 Home
             - :white_square_button: Style
