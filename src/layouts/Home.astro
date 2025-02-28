@@ -7,6 +7,7 @@ import { Image } from "astro:assets";
 import piano6 from "@images/pianos/2015/04/006-1.jpg";
 import steinway_B from "@images/pianos/2015/04/Steinway_B_277657_20.jpg";
 import layer221 from "@images/pianos//2017/10/Layer-221.png";
+import Styles from "./home.module.scss";
 ---
 
 <!doctype html>
@@ -17,10 +18,10 @@ import layer221 from "@images/pianos//2017/10/Layer-221.png";
 	<body>
 		<Nav>
 			<div class="container pb-lg-2 pb-sm-1">
-				<div class="bor text-bg-dark bg-opacity-50">
+				<div class=`bor ${Styles.infoContainer}`>
 					<div class="der">
-						<div class="col-sm-12 text-light">
-							<h3>Purchase. Restoration. Service.</h3>
+						<div class=`col-sm-12 text-light ${Styles.header_text}`>
+							<h1>Purchase. Restoration. Service.</h1>
 							<p>
 								At John Koelle Piano we specialize in the custom
 								restoration of Steinways and other fine pianos.
@@ -31,7 +32,7 @@ import layer221 from "@images/pianos//2017/10/Layer-221.png";
 								including tuning and repair.
 							</p>
 							<p>
-								<a class="button" href="/restoration-service/">
+								<a class=`${Styles.button}` href="/restoration-service/">
 									See Restoration Services
 								</a>
 							</p>

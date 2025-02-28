@@ -1,0 +1,29 @@
+.button, .btn, input[type="submit"] {
+    background: #9F1F1B;
+    display: inline-flex
+;
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 16px;
+    padding: 13px 100px;
+    border: 0;
+    margin-top: 10px;
+    text-decoration: none !important;
+    transition: all .3sease;
+}
+
+.header_text {
+    text-align: center;
+    padding: 100px 0;
+    color: #fff;
+}
+
+.header_text p {
+    font-size: 31px;
+    text-shadow: 0 0 8px #000;
+    padding: 0 200px;
+}
+
+.infoContainer {  
+    background-color:rgba(61, 44, 0, 0.5);
+}
