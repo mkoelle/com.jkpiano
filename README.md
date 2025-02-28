@@ -30,7 +30,7 @@ John Koelle Piano site
     - :white_square_button: Pages
         - 🔳 Home
             - :white_square_button: Style
-                - Hero should reduce padding/margin on mobile view
+                - :heavy_check_mark: Hero should reduce padding/margin on mobile view
                 - Purchase Section should fix overlap on mobile view
         - :heavy_check_mark: NotFound/404
         - :white_square_button: Blog
