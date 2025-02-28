@@ -1,9 +1,11 @@
 .navbar_head {
 	position: relative;
 	z-index: 100;
-	background-color: rgba(0, 0, 0, .45);
 	background: rgba(0, 0, 0, .45) url(/Steinway_Long_A.jpg) no-repeat;
 	background-size: cover;
 	background-position: center;
+}
+.navbar {
+	background-color: rgba(0, 0, 0, .45);
 	background-blend-mode: darken;
 }

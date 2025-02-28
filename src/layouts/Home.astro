@@ -1,0 +1,105 @@
+---
+import Nav from "@components/Nav/index.astro";
+import Footer from "@components/Footer/index.astro";
+import MainHead from "@components/MainHead.astro";
+import "../styles/global.scss";
+import { Image } from "astro:assets";
+import piano6 from "@images/pianos/2015/04/006-1.jpg";
+import steinway_B from "@images/pianos/2015/04/Steinway_B_277657_20.jpg";
+import layer221 from "@images/pianos//2017/10/Layer-221.png";
+import Styles from "./home.module.scss";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<MainHead />
+	</head>
+	<body>
+		<Nav>
+			<div class="container pb-lg-2 pb-sm-1">
+				<div class=`bor ${Styles.infoContainer}`>
+					<div class="der">
+						<div class=`col-sm-12 text-light ${Styles.header_text}`>
+							<h1>Purchase. Restoration. Service.</h1>
+							<p>
+								At John Koelle Piano we specialize in the custom
+								restoration of Steinways and other fine pianos.
+								We offer the Highest Quality Craftsmanship at
+								honest prices. We rebuild for many institutions
+								and professionals as well as a large private
+								clientele. We also offer in-home service
+								including tuning and repair.
+							</p>
+							<p>
+								<a class=`${Styles.button}` href="/restoration-service/">
+									See Restoration Services
+								</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</Nav>
+
+		<div class="container">
+			<div class="bor">
+				<div class="der">
+					<div class="row">
+						<div class="col-sm-6">
+							<Image
+								src={piano6}
+								class="alignleft"
+								alt="logo"
+								width="470"
+								height="352"
+							/>
+						</div>
+						<div class="col-sm-6" style="margin-top: 8%;">
+							<h3>Purchase&#8230;</h3>
+							<p>
+								Browse our available pianos for sale. We
+								specialize in restoring Steinway grand pianos.
+							</p>
+							<p>
+								<a href="/pianos-for-sale/" class=`${Styles.button}`>Pianos for Sale</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="full_img">
+			<Image src={steinway_B} alt="logo" width="477" height="318" />
+		</div>
+
+		<div class="container">
+			<div class="bor">
+				<div class="der container text-center">
+					<div class="row row-cols-auto">
+						<div class="col-sm-12">
+							<h2>What We Offer</h2>
+						</div>
+					</div>
+					<div class="row row-cols-auto">
+						<div class="col-sm-12">
+							<a href="/tuning-and-service/" class=`${Styles.button}`>
+								See All Services
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="full_img">
+			<Image src={layer221} alt="logo" width="1680" height="822" />
+		</div>
+
+		<main class="container-fluid col-sm-8 mt-4 text-lef">
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>

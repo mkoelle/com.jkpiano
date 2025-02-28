@@ -49,3 +49,7 @@ John Koelle Piano site
     - [Astro-Bootstrap](https://astro-bootstrap.github.io)
     - [@astrojs/mdx](https://docs.astro.build/en/guides/integrations-guide/mdx/)
     - [@astrojs/sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/)
+
+## Staging location
+
+- [dev site](https://d3nkr2377cpjg3.cloudfront.net/)
