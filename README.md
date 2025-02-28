@@ -12,6 +12,7 @@ John Koelle Piano site
             - Cut domain name servers over from third party to AWS hosted zone
             - Create certificates for https
             - Associate cloudfront with certs and domains
+            - Set 404 and 403 pages on cloudfront
     - ✔️ CI/CD
     - :white_square_button: Analytics - TBD
     - :white_square_button: SEO - TBD
