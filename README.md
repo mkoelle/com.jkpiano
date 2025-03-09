@@ -49,7 +49,7 @@ John Koelle Piano site
             - :heavy_check_mark: Restoration/Service
             - :heavy_check_mark: Tuning And Service
             - :heavy_check_mark: Testimonials
-        - :white_square_button: Pianos for sale
+        -  :no_entry: Pianos for sale
             - :white_square_button: Summary page
                 - listings should show preview image
                 - listings should have purchase button link
@@ -62,7 +62,8 @@ John Koelle Piano site
             - :heavy_check_mark: Links should default to white / gold?, does not stand out enough
             - Phone number should be in upper right
             - Nav should collapse in mobile view (hamburger menu)
-            - phone number should be sticky in mobile view
+            - Phone number should be sticky in mobile view
+            - Restoration Menu not working on deployed site
     - ✔️ Footer
         - :heavy_check_mark: Navigation
         - :heavy_check_mark: Style
