@@ -19,7 +19,11 @@ BUCKET=$(aws cloudformation list-exports --query "Exports[?Name == 'com-${DOMAIN
 node --version
 npm --version
 
-npm i
+npm update -g npm
+
+npm --version
+
+npm ci
 npm run build
 
 ls dist
