@@ -16,6 +16,9 @@ set -x
 
 BUCKET=$(aws cloudformation list-exports --query "Exports[?Name == 'com-${DOMAIN}-content-bucket'].Value" --output text)
 
+node --version
+npm --version
+
 npm i
 npm run build
 
