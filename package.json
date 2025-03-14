@@ -21,11 +21,11 @@
   },
   "homepage": "https://github.com/mkoelle/com.jkpiano#readme",
   "dependencies": {
-    "@astrojs/mdx": "^4.1.0",
+    "@astrojs/mdx": "^4.1.1",
     "@astrojs/sitemap": "^3.2.1",
     "@popperjs/core": "^2.11.8",
     "@types/bootstrap": "^5.2.10",
-    "astro": "^5.4.0",
+    "astro": "^5.4.3",
     "astro-bootstrap": "^0.7.0",
     "bootstrap": "^5.3.3"
   },

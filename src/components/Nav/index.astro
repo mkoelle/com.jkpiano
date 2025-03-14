@@ -5,16 +5,10 @@ const siteTitle = "John Koelle Piano"; // pull this in from a config file
 const items: NavbarItemType[] = [
   // pull this in from a config file
   { text: "Biography", href: "/history-koelle-piano" },
-  {
-    text: "Restoration",
-    subItems: [
-      { text: "The Restoration Process", href: "/restoration-process" },
-      { divider: true },
-      { text: "Restoration Service", href: "/restoration-service" },
-    ],
-  },
+  { text: "Restoration Process", href: "/restoration-process" },
+  { text: "Restoration Service", href: "/restoration-service" },
   { text: "Tuning and service", href: "/tuning-and-service" },
-  { text: "Pianos for sale", href: "/pianos-for-sale" },
+  // { text: "Pianos for sale", href: "/pianos-for-sale" },
   { text: "Contact Us", href: "#" },
   { text: "Blog", href: "/posts" },
   { text: "Testimonials", href: "/testimonials" },
@@ -24,6 +18,7 @@ import logo from "@images/Logo.png";
 import Styles from "./styles.module.scss";
 const id = "topNavBar";
 ---
+
 <div class=`${Styles.navbar_head}`>
   <Navbar class=`navbar navbar-expand ${Styles.navbar}` data-bs-theme="dark">
     <div class=`container col-sm-8 my-2 flex-wrap`>
