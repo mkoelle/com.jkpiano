@@ -6,7 +6,7 @@ on:
 jobs:
   dev:
     name: deploy-dev
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     environment:
       name: dev
     steps:
