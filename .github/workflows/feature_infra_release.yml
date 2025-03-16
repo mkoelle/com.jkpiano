@@ -28,7 +28,7 @@ jobs:
 
   deploy-prod:
     name: Deploy Prod
-    needs: deploy-dev
+    # needs: deploy-dev
     runs-on: ubuntu-latest
     environment:
       name: prod
