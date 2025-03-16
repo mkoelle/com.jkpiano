@@ -35,13 +35,13 @@ Resources:
     Properties:
       DistributionConfig:
         Comment: !Sub "CDN for ${GivenDomain}"
-        # Aliases:
-        #   - !Sub "${GivenDomain}"
-        #   - !Sub "www.${GivenDomain}"
-        # ViewerCertificate:
-        #   AcmCertificateArn: !Ref Certificate
-        #   MinimumProtocolVersion: "TLSv1.2_2018"
-        #   SslSupportMethod: "sni-only"
+        Aliases:
+          - !Sub "${GivenDomain}"
+          - !Sub "www.${GivenDomain}"
+        ViewerCertificate:
+          AcmCertificateArn: !Ref Certificate
+          MinimumProtocolVersion: "TLSv1.2_2018"
+          SslSupportMethod: "sni-only"
         DefaultCacheBehavior:
           ForwardedValues:
             QueryString: true
@@ -52,12 +52,12 @@ Resources:
               FunctionARN: !GetAtt CDNRequestHandler.FunctionMetadata.FunctionARN
         DefaultRootObject: index.html
         CustomErrorResponses:
-        - ErrorCode: 404
-          ResponsePagePath: "/404.html"
-          ResponseCode: 200
-        - ErrorCode: 403
-          ResponsePagePath: "/index.html"
-          ResponseCode: 200
+          - ErrorCode: 404
+            ResponsePagePath: "/404.html"
+            ResponseCode: 200
+          - ErrorCode: 403
+            ResponsePagePath: "/index.html"
+            ResponseCode: 200
         PriceClass: "PriceClass_100"
         Enabled: true
         HttpVersion: http2
@@ -68,26 +68,26 @@ Resources:
               OriginAccessIdentity: !Sub "origin-access-identity/cloudfront/${CloudFrontOriginAccessIdentity}"
   CDNRequestHandler:
     Type: AWS::CloudFront::Function
-    Properties: 
+    Properties:
       AutoPublish: True
       FunctionCode: function handler(e){var i=e.request,n=i.uri;return n.endsWith("/")?i.uri+="index.html":n.includes(".")||(i.uri+="/index.html"),i}
-      FunctionConfig: 
+      FunctionConfig:
         Comment: redirects folder requests for clean urls
         Runtime: cloudfront-js-2.0
       Name: Index-Server2
-  # Certificate:
-  #   Type: AWS::CertificateManager::Certificate
-  #   Properties: 
-  #     DomainName: !Sub "${GivenDomain}"
-  #     DomainValidationOptions:
-  #       - DomainName: !Sub "${GivenDomain}"
-  #         HostedZoneId: !Sub "${HostedZoneId}"
-  #       - DomainName: !Sub "www.${GivenDomain}"
-  #         HostedZoneId: !Sub "${HostedZoneId}"
-  #     SubjectAlternativeNames: 
-  #       - !Sub "${GivenDomain}"
-  #       - !Sub "www.${GivenDomain}"
-  #     ValidationMethod: DNS
+  Certificate:
+    Type: AWS::CertificateManager::Certificate
+    Properties:
+      DomainName: !Sub "${GivenDomain}"
+      DomainValidationOptions:
+        - DomainName: !Sub "${GivenDomain}"
+          HostedZoneId: !Sub "${HostedZoneId}"
+        - DomainName: !Sub "www.${GivenDomain}"
+          HostedZoneId: !Sub "${HostedZoneId}"
+      SubjectAlternativeNames:
+        - !Sub "${GivenDomain}"
+        - !Sub "www.${GivenDomain}"
+      ValidationMethod: DNS
   HostedZoneRecordSet:
     Type: AWS::Route53::RecordSetGroup
     Properties:

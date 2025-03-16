@@ -1,10 +1,10 @@
 name: Feature - Infra
-on: 
+on:
   push:
     paths:
-      - 'infra/**'
-      - 'scripts/**'
-      - '.github/**'
+      - "infra/**"
+      - "scripts/**"
+      - ".github/**"
     branches-ignore:
       - main
 jobs:
