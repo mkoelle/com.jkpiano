@@ -17,6 +17,7 @@ body {
   font-family: 'ACaslon';
   background-color: #fff;
 }
+
 blockquote {
   padding: 10px 20px;
   margin: 0 0 20px;
@@ -25,20 +26,24 @@ blockquote {
 }
 
 .bor {
-	margin: 70px 0;
-	border: 2px solid #F89F2C;
+  margin: 70px 0;
+  border: 2px solid #F89F2C;
 }
 
 .der {
-	margin: 10px;
-	border: 1px solid #F89F2C;
-	padding: 40px;
+  margin: 10px;
+  border: 1px solid #F89F2C;
+  padding: 40px;
 }
-.alignleft{float:left;padding-right:25px}
 
-.full_img {
+.alignleft {
+  float: left;
+  padding-right: 25px
 }
+
+.full_img {}
+
 .full_img img {
-	width: 100%;
+  width: 100%;
   height: auto;
 }
